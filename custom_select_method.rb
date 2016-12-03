@@ -4,18 +4,13 @@ def select(collection)
 
   while counter < collection.size
     answer = yield(collection[counter])
-
-    if answer == true
-      new_colleciton << collection[counter]
-    end
+    new_colleciton << collection[counter] if answer == true
     counter += 1
   end
 
   new_colleciton
 end
 
-
 arr = [1, 2, 3, 4, 5, 6]
 
 p select(arr) { |i| i.even? }
-
