@@ -13,4 +13,4 @@ end
 
 arr = [1, 2, 3, 4, 5, 6]
 
-p select(arr) { |i| i.even? }
+p select(arr, &:even?)
