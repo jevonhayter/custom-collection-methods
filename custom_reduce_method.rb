@@ -1,13 +1,11 @@
-def map(collection)
-  new_collection = []
+def reduce(array, default=0)
+  counter = 0
+  accumulator = default
 
-  collection.each do |i|
-    answer = yield(i)
-    new_collection << answer
+  while counter < array.size
+    accumulator = yield(accumulator, array[counter])
+    counter += 1
   end
-  new_collection
+
+  accumulator
 end
-
-arr = [1, 2, 3, 4, 5, 6]
-
-p map(arr) { |i| i + 1 }
